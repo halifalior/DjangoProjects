@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="col-md-8 offset-md-2">
+    <h1 style="color:red"> Titanic Project </h1>
+    <h2>You can predict if a passenger would have survived</h2>
+    <p>Enter a passenger details here , and get your prediction now  </p>
+    <form action="{% url 'result1' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.user_input_pclass }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_sex }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_age }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_sibsp }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_parch }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_fare }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_embarked }}
+        </div>
+        <div class="form-group">
+            {{ form.user_input_title }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}</html>

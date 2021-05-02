@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+</head>
+<body>
+<h1>this is the result page </h1>
+<h2>the passenger details are: </h2>
+<p>age:{{ age }},pclass:{{ pclass }},sex:{{ sex }},sibsp:{{ sibsp }},partch:{{ parch}} </p>
+<p>fare:{{ fare }},embarked:{{ embarked }},title:{{ title }}</p>
+<p><b>The model prediction is :</b> {{ survived }} </p>
+<p><b>The price prediction is :</b> {{ price }} </p>
+<a href="{% url 'home' %}">back to homepage</a>
+
+</body>
+</html>
