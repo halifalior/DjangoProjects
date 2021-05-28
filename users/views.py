@@ -27,6 +27,5 @@ def register(request):
             profile=profile_form.save(commit=False)
             profile.user=user
             profile.save()
-
             login(request, user)
             return redirect(reverse("home"))

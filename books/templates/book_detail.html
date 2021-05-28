@@ -2,12 +2,25 @@
 {% load static %}
 
 {% block page_content %}
+
+
 <h1>{{ book.title }}</h1>
 <div class="row">
     <div class="col-md-8">
         <img src="{% static book.image %}" alt="" width="100%">
     </div>
-    <div class="col-md-4">
+        <div class="col-md-4">
+        <br>
+        <h5> Book's Rating {{ bookrankavg }}</h5>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+
+
+        <br>
         <h5>About the book:</h5>
         <p>{{ book.description }}</p>
         <br>
@@ -19,6 +32,15 @@
         <br>
         <h5>Genre:</h5>
         <p>{{ book.genre }}</p>
+        <br>
+        <h5>Leave a rank:  </h5>
+        <form action="/books/{{ book.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.rank }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
     </div>
 </div>
 {% endblock %}

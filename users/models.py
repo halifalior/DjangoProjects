@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     GENDER_MALE = 0
     GENDER_FEMALE = 1
     GENDER_CHOICES = [(GENDER_MALE, 'Male'), (GENDER_FEMALE, 'Female')]
-    gender = models.IntegerField(choices=GENDER_CHOICES)
+    gender = models.IntegerField(choices=GENDER_CHOICES,default=GENDER_MALE)
 
     def __str__(self):
         return self.user.username

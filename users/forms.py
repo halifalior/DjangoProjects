@@ -9,4 +9,4 @@ class CustomUserCreationForm(UserCreationForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['address','age','gender']
+        fields = ['address','age']
